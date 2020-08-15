@@ -1,0 +1,29 @@
+version: '3.7'
+services: 
+    react-appis:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+
+        ports: 
+            - "3004:3000"
+        
+            
+        volumes: 
+            - /react-app/node_modules
+            - .:/react-app
+
+        stdin_open: true
+    
+    react-tests:
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+
+        volumes: 
+            - /react-app/node_modules
+            - .:/react-app
+
+        command: ["npm", "run", "test"]
+        
+
