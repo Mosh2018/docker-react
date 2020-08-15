@@ -7,3 +7,14 @@ before_install:
 
 script:
     - docker run -e CI=true mosh2018/docker-react npm run test
+
+deploy:
+    provider: elasticbeanstalk
+    region: eu-central-1
+    app: docker-react
+    env: DockerReact-env
+    bucket_name: elasticbeanstalk-eu-central-1-149501274876
+    bucket_path: docker-react
+    on:
+        branch: master
+        
