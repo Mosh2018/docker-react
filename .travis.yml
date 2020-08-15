@@ -19,7 +19,7 @@ deploy:
         branch: master
 
     access_key_id:
-        secure: "$aws_access_key_id"
+        secure: "$AWS_ACCESS_KEY_ID"
 
     secret_access_key:
-        secure: "$aws_secret_access_key"
+        secure: "$AWS_SECRET_ACCESS_KEY"
