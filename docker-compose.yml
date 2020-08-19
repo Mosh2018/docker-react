@@ -6,12 +6,12 @@ services:
             dockerfile: Dockerfile.dev
 
         ports: 
-            - "3004:3000"
+            - "3000:3000"
         
             
         volumes: 
-            - /react-app/node_modules
-            - .:/react-app
+            - /app/node_modules
+            - .:/app
 
         stdin_open: true
     
@@ -21,8 +21,8 @@ services:
             dockerfile: Dockerfile.dev
 
         volumes: 
-            - /react-app/node_modules
-            - .:/react-app
+            - /app/node_modules
+            - .:/app
 
         command: ["npm", "run", "test"]
         
